@@ -40,3 +40,7 @@ def main():
     args = parser.parse_args()
 
     print(SKU_MAP[args.sku](args.cpus).getMPIString(args.mpi))
+
+
+if __name__ == "__main__":
+    main()
