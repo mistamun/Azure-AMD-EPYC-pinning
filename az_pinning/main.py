@@ -1,12 +1,14 @@
 import argparse
-from .sku_milan import HB120v3
-from .sku_genoa import HB176v4, HX
+from .sku_v3 import HB120v3
+from .sku_v4 import HB176v4, HX
+from .sku_v5 import HB368v5
 
 
 SKU_MAP = {
     'HB120v3': HB120v3,
     'HB176v4': HB176v4,
-    'HX': HX
+    'HX': HX,
+    'HB368v5': HB368v5,
 }
 
 

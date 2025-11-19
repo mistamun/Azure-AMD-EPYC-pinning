@@ -2,7 +2,7 @@ from .ccd_base import CCD
 from .cpu_base import CPU
 
 
-class GenoaX(CPU):
+class GenoaX9V33X(CPU):
     def __init__(self):
         """
             2 nodes per socket
