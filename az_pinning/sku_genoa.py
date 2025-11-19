@@ -8,5 +8,6 @@ class HB176v4(SKU):
         if cpuCores is not None:
             self.subscribe(cpuCores)
 
+
 class HX(HB176v4):
     pass

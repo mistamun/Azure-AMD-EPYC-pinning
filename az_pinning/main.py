@@ -12,7 +12,8 @@ SKU_MAP = {
 
 def main():
     parser = argparse.ArgumentParser(
-    description='Returns mpirun string for proper pinning')
+        description='Returns mpirun string for proper pinning'
+    )
 
     parser.add_argument('--sku', type=str,
                         help='SKU Name. It can be HB120v3, HB120v2, HB60')

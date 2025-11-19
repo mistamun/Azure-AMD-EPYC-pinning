@@ -16,14 +16,14 @@ class CCD:
             _type_: _description_
         '''
         return self.numberOfCores - self.usedCores
-    
+
     @property
     def fullySubscribed(self):
         return self.usedCores == self.numberOfCores
 
     def __str__(self):
         binaryString =  ''.join(['1' for _ in range(self.usedCores)]) 
-        binaryString += ''.join(['0'  for _ in range(self.numberOfCores - self.usedCores)])
+        binaryString += ''.join(['0' for _ in range(self.numberOfCores - self.usedCores)])
 
         return binaryString
 
@@ -37,7 +37,7 @@ class CCD:
             self.usedCores += 1
         else:
             raise IndexError('CCD is already fully subscribed.')
-        
+
     def unsubscribeCore(self):
         '''Unsuscribe single core
 
@@ -48,7 +48,7 @@ class CCD:
             self.usedCores -= 1
         else:
             raise IndexError('CCD is totally unsuscribed.')
-        
+
     def subscribeCores(self, numberOfCores):
         '''Suscribe multiple cores
 
@@ -61,7 +61,6 @@ class CCD:
         for _ in range(numberOfCores):
             self.subscribeCore()
 
-            
     def unsubscribeCores(self, numberOfCores):
         '''Unsuscribe multiple cores
 

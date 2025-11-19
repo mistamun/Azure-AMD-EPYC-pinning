@@ -13,7 +13,7 @@ class CPU:
     def unsubscribe(self, numberOfCores):
         for _ in range(numberOfCores):
             sorted(self.availableCCDS, key=lambda x: (-x.usedCores, self.availableCCDS.index(x)))[0].unsubscribeCore()
-    
+
     def __str__(self):
         return ''.join([str(ccd) for ccd in self.CCDs])
 

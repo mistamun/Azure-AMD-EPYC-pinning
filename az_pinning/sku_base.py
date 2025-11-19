@@ -6,7 +6,6 @@ class SKU:
         for _ in range(numberOfCores):
             sorted(self.CPUs, key=lambda cpu: (cpu.usedCores, -self.CPUs.index(cpu)))[0].subscribe(1)
 
-        
     def __str__(self):
         return ''.join([str(cpu) for cpu in self.CPUs])
 
