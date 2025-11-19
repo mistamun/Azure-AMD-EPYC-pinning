@@ -15,21 +15,28 @@ def main():
         description='Returns mpirun string for proper pinning'
     )
 
-    parser.add_argument('--sku', type=str,
-                        help='SKU Name. It can be HB120v3, HB120v2, HB60')
+    parser.add_argument(
+        '--sku',
+        choices=list(SKU_MAP.keys()),
+        help='SKU Name',
+    )
 
-    parser.add_argument('--cpus', type=int,
-                        help='Number of CPUs for which pinning is desired')
+    parser.add_argument(
+        '--cpus',
+        type=int,
+        help='Number of CPUs for which pinning is desired',
+    )
 
-    parser.add_argument('--mpi', type=str,
-                        help='MPI version. It can be IMPI, PMPI, OMPI.')
+    parser.add_argument(
+        '--mpi',
+        choices=[
+            'OMPI',
+            'IMPI',
+            'PMPI',
+        ],
+        help='MPI version',
+    )
 
     args = parser.parse_args()
-
-    if args.sku not in SKU_MAP:
-        raise NotImplementedError('SKU {} not supported. SKU should be in {}').format(args.sku, ",".join(list(SKU_MAP.keys())))
-
-    if args.mpi not in ['OMPI', 'IMPI', 'PMPI']:
-        raise NotImplementedError('MPI {} not supported. SKU should be in IMPI, PMPI, OMPI.').format(args.mpi)
 
     print(SKU_MAP[args.sku](args.cpus).getMPIString(args.mpi))
